@@ -26,14 +26,33 @@ class Core {
 
 
 public function __construct(){
-    $this->getUrl();
+    // Get the formated url
+    $url = $this->getUrl();
+
+    // Looks in controllers for first controller
+    if(file_exists('../app/controllers/' . ucwords($url[0]) .'.php')){
+        // If exists, set as controller
+        $this->currentController = ucwords($url[0]);
+    }
 }
 
 // { getUrl() } :- Get any params in URL after / sign
+// [ $url ] :- Handles the URl different parts
 public function getUrl(){
-    echo $_GET['url'];
+    if(isset($_GET['url'])){
+    // Strips '/' sign from tthe end of th url
+    $url = rtrim($_GET['url'], '/');
+
+    // filter the url characters
+    $url = filter_var($url, FILTER_SANITIZE_URL);
+
+    //Breaks url contents into array
+    $url =  explode('/', $url);
+        
+    return $url;
+ }
 }
 
 
-}
+}  
 ?>
