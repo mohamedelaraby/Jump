@@ -1,7 +1,19 @@
- <h2>Be a practical dreamer, backed by action</h2>
-<h3>No amount of money buy a second of time</h3>
+<?php 
+/*
+[  author ] ;- Muhammed alaraby
+[  Date   ] ;- 29/10/19
+[  Info   ] ;- Home page 
+*/
 
+?>
 <?php 
     require_once '../app/bootstrap.php';
+
+    // Init Core Library
+    $core = new Core();
+
+
+
+
 
 ?>

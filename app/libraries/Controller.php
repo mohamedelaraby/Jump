@@ -2,7 +2,7 @@
 /*
 [  author ] ;- Muhammed alaraby
 [  Date   ] ;- 29/10/19
-[  Info   ] ;- { Controller } :-  Load Important Core files  
+[  Info   ] ;- { Controller } :- Handle contetn between UI and Backend
 */
 
 

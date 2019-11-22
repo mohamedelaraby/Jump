@@ -2,7 +2,7 @@
 /*
 [  author ] ;- Muhammed alaraby
 [  Date   ] ;- 29/10/19
-[  Info   ] ;- { Database } :- 
+[  Info   ] ;- { Database } :- Handle database content
 */
 
 ?>
