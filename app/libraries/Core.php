@@ -25,7 +25,7 @@ class Core {
     protected $params = [];
 
 
-public function __construct(){
+public function  __construct(){
     // Get the formated url
     $url = $this->getUrl();
 
@@ -36,6 +36,12 @@ public function __construct(){
         // Unset 0 Index
         unset($url[0]);
     }
+
+    //Require the controller
+    require_once ' ../app/controllers/' .  $this->currentController . '.php';
+
+    //  Instantiate controller class
+    $this->currentController =  new $this->currentController;
 }
 
 // { getUrl() } :- Get any params in URL after / sign
