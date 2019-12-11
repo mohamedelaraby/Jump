@@ -11,7 +11,16 @@
 
 class  Pages {
     public function  __construct(){
-        echo 'Pages looded';
+       
+    }
+    public function index(){
+
+        
+    }
+    
+    // about method
+    public function about($id){
+        echo 'this is about' .$id;
     }
 }
 

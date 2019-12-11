@@ -16,13 +16,13 @@
 <?php
 /**
  *  [ $currentController ] :- Load pages controller if there is  no current controller
- *  [ $currentMethod ] :- Load index mothed if there is  no current method
+ *  [ $currentMethod ] :- Load index method if there is  no current method
  *  [ $params ] :- Hold the URl params
  */
 
 class Core {
     private $currentController = 'Pages';
-    protected $currentMothed = 'index';
+    protected $currentMethod = 'index';
     protected $params = [];
 
 
@@ -43,6 +43,22 @@ public function  __construct(){
 
     //  Instantiate controller class
     $this->currentController =  new $this->currentController;
+
+    // Check for the second part of url  
+    if(isset($url[1])){
+        // Check to see if method exists in controller
+        if(method_exists($this->currentController,$url[1])){
+            $this->currentMethod = $url[1];
+            //unset index 1
+            unset($url[1]);
+        }
+    }
+
+    // Get url rest params
+    $this->params = $url ? array_values($url) : [];
+
+    // Call a callback with array or  params
+    call_user_func_array([$this->currentController,$this->currentMethod],$this->params);
 }
 
 // { getUrl() } :- Get any params in URL after / sign
