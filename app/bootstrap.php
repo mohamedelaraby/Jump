@@ -7,11 +7,15 @@
 
 ////////////////////////////////////////////////////////////////////////
 
- // Load Libraries
-    require_once __DIR__.'/libraries/Core.php';
-    require_once __DIR__.'/libraries/Database.php';
-    require_once __DIR__.'/libraries/Controller.php';
+
+    // Load Config
+        require_once 'config/config.php';
+
+
+    // Autoload Core Libraries
+    spl_autoload_register(function($className){
+        require_once 'libraries/'.$className.'.php';
+    })
 
 ?>
 
-<h3>No amount of money buy a second of time</h3>

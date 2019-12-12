@@ -18,9 +18,7 @@ class  Pages extends Controller{
     public function index(){
         $data =[
             'title' => 'Welcome',
-            'post' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quasi quia eius tempore voluptates,
-                      quae magnam! Earum aperiam repudiandae asperiores',
+            'post' => 'No amount of money buy a second of time',
         ];
 
         $this->view('pages/index',$data); 
