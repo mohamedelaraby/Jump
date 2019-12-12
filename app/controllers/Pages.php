@@ -10,6 +10,7 @@
 <?php
 
 class  Pages extends Controller{
+
     public function  __construct(){
        
     }
@@ -17,7 +18,7 @@ class  Pages extends Controller{
     /// [ index ]:- Defualt method if there is not other method
     public function index(){
         $data =[
-            'title' => 'Welcome',
+            'title' => 'Welcome home',
             'post' => 'No amount of money buy a second of time',
         ];
 
@@ -27,7 +28,12 @@ class  Pages extends Controller{
     
     // about method
     public function about( ){
-        $this->view('pages/about');
+        $data =[
+            'title' => 'About us',
+            'post' => 'No amount of money buy a second of time',
+        ];
+
+        $this->view('pages/about', $data);
     }
 }
 
