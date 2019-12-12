@@ -9,18 +9,27 @@
 
 <?php
 
-class  Pages {
+class  Pages extends Controller{
     public function  __construct(){
        
     }
-    public function index(){
 
+    /// [ index ]:- Defualt method if there is not other method
+    public function index(){
+        $data =[
+            'title' => 'Welcome',
+            'post' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quasi quia eius tempore voluptates,
+                      quae magnam! Earum aperiam repudiandae asperiores',
+        ];
+
+        $this->view('pages/index',$data); 
         
     }
     
     // about method
-    public function about($id){
-        echo 'this is about' .$id;
+    public function about( ){
+        $this->view('pages/about');
     }
 }
 
