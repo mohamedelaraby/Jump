@@ -12,7 +12,9 @@
 class  Pages extends Controller{
 
     public function  __construct(){
-       
+       //Test the database
+        $this->postModel = $this->model('Post');
+
     }
 
     /// [ index ]:- Defualt method if there is not other method

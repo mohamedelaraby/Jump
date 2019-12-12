@@ -61,6 +61,7 @@ public function  __construct(){
     call_user_func_array([$this->currentController,$this->currentMethod],$this->params);
 }
 
+  
 // { getUrl() } :- Get any params in URL after / sign
 // [ $url ] :- Handles the URl different parts
 public function getUrl(){
