@@ -1,15 +1,7 @@
 <!-- INCLUDE MAIN HEADER -->
 <?php require APP_ROOT . '/views/inc/header.php';?>
-<h1><?= $data['title']; ?></h1>
+<h1 class="display-3"><?= $data['TITLE']; ?></h1>
+<p class="lead text-center text-white"><?= $data['DOCS']; ?></p>
  
-<ul class="list-group">
-    <?php foreach ($data['post'] as $item) :?> 
-        <li class="list-group-item"><?php echo $item->title;?></li>
-        <li class="list-group-item"><?php echo $item->author;?></li>
-        <li class="list-group-item"><?php echo $item->body;?></li>
-        <br><hr><br>
-    <?php endforeach;?>
-</ul>
-
 <!-- INCLUDE MAIN FOOTER -->
 <?php require APP_ROOT . '/views/inc/footer.php';?>

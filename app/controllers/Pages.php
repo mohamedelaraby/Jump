@@ -12,18 +12,17 @@
 class  Pages extends Controller{
 
     public function  __construct(){
-       //Test the database
-        $this->postModel = $this->model('Post');
+       
 
     }
 
     /// [ index ]:- Defualt method if there is not other method
     public function index(){
-        //Get the post from model
-        $posts = $this->postModel->getPosts();
+      
         $data =[
-            'title' => 'Welcome home',
-            'post' => $posts,
+            'TITLE' => 'JUMP  ',
+            'DOCS' => 'This is Jump an open source PHP Framework Which you can use it as you Want,
+             okay, Let`s some thing great ',
         ];
 
         $this->view('pages/index',$data); 
