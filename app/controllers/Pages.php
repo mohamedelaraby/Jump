@@ -19,9 +19,11 @@ class  Pages extends Controller{
 
     /// [ index ]:- Defualt method if there is not other method
     public function index(){
+        //Get the post from model
+        $posts = $this->postModel->getPosts();
         $data =[
             'title' => 'Welcome home',
-            'post' => 'No amount of money buy a second of time',
+            'post' => $posts,
         ];
 
         $this->view('pages/index',$data); 

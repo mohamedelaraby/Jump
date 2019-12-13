@@ -36,6 +36,61 @@
             
         }
     }
+
+    // Prepare statement with query
+    public function query($sqlStatement){
+        $this->stmt = $this->dbh->prepare($sqlStatement); 
+    }
+
+
+    // Bind Values to the sql statement
+    public function bind($paramter,$variable,$data_type = null){
+        // Check for the type of the variable
+        if(is_null($data_type)){
+            switch(true){
+                case is_int($variable):
+                    $data_type = PDO::PARAM_INT;
+                    break;
+                case is_bool($variable):
+                    $data_type = PDO::PARAM_BOOL;
+                    break;    
+                case is_null($variable):
+                    $data_type = PDO::PARAM_NULL;
+                    break;
+                default:
+                    $data_type = PDO::PARAM_STR;
+                     
+            }
+        }
+
+        //Bind the values
+        $this->stmt->bindValue($paramter,$variable,$data_type);
+    }
+
+
+    // Execute the prepared statement
+    public function execute(){
+        return $this->stmt->execute();
+    }
+
+    // Get Mutli Record as array of objects
+    public function resultSet(){
+        // execute the statement
+        $this->execute();
+        // Get the resultset
+        return $this->stmt->fetchAll();
+    }
+
+    // Get  single record as an object
+    public function singleResultSet(){
+        $this->execute();
+        return $this->stmt->fetch();
+    }
+
+    // Get row count
+    public function rowCount(){
+        return $this->stmt->rowCount();
+    }
  }
 
 
